@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Combos</title>
+    <link rel="stylesheet" href="styles.css">
+     <!-- Link to your CSS file -->
+     <style>
+     .filter-sort {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+}
+
+.filter-option label {
+    margin-right: 10px;
+}
+
+.filter-option select,
+.filter-option input[type="date"] {
+    padding: 5px;
+}
+
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; /* Ensure equal spacing between items */
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: calc(25% - 20px); /* Calculate 25% width minus the gap */
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product .original-price {
+    text-decoration: line-through;
+}
+
+.product .discount {
+    color: red;
+}
+
+.product .rating {
+    color: #ff9800;
+}
+
+@media (max-width: 1024px) {
+    .product {
+        width: calc(33.33% - 20px); /* Show 3 products per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: calc(50% - 20px); /* Show 2 products per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%; /* Show 1 product per row on extra small screens */
+    }
+}
+
+
+/* Additional styles for the modal */
+/* General styles for modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+     </style>
+</head>
+<body>
+    <header>
+        <div class="logo-title-container">
+            <div class="logo">
+                <img src="https://i.pinimg.com/originals/02/cf/dd/02cfdd647990ccda91941d30314ac115.gif" width="100" height="100" alt="Logo">
+            </div>
+            <div class="title">
+                <h1>WELCOME</h1>
+            </div>
+        </div>
+        <div class="search-bar">
+            <form id="search-form" action="javascript:void(0);">
+                <input type="text" id="search-input" placeholder="Search for gifts">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="location-dropdown">
+            <div class="location-select-container">
+                <img src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-vector-location-icon-png-image_5159127.jpg" alt="Location Icon" width="20" height="20">
+                <select id="location-select">
+                    <option value="Bangalore" selected>Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+                
+            </div>
+        </div>
+        <div class="user-options">
+            <div class="wishlist-dropdown">
+                <a href="wishlist.html"><button>Wishlist</button></a>
+                <div class="wishlist-dropdown-content">
+                    <!-- Wishlist options can be added here -->
+                </div>
+            </div>
+            <div class="cart-dropdown">
+                <a href="cart.html"><button>Cart</button></a>
+                <div class="cart-dropdown-content">
+                    <!-- Cart options can be added here -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">EXPRESS</a></li>
+            <li><a href="#">CAKES</a></li>
+            <li><a href="#">FLOWERS</a></li>
+            <li><a href="#">PLANTS</a></li>
+            <li><a href="#">GIFTS</a></li>
+            <li><a href="#">PERSONALIZED GIFTS</a></li>
+            <li class="dropdown">
+                <a href="#">COMBOS</a>
+                <div class="dropdown-content">
+                    <div class="column">
+                        <h3>Combos By Type</h3>
+                        <a href="all-combos.html">All Combos</a>
+                        <a href="best-seller.html">Best Seller</a>
+                        <a href="new-arrival.html">New Arrival</a>
+                        <a href="Premium.html">Premium Combos</a>
+                    </div>
+                    <div class="column">
+                        <h3>Exclusive Combos</h3>
+                        <a href="cake-combos.html">All Cake Combos</a>
+                        <a href="flower-combos.html">All Flower Combos</a>
+                
+                        <a href="express-combos.html">Express Combos Delivery</a>
+                        <a href="personalised-combos.html">Personalised Combos Gifts</a>
+                    </div>
+                    <div class="column">
+                        <h3>Featured Combos</h3>
+                        <a href="flower-combos.html">Cakes And Flowers</a>
+                        <a href="flowersandchocolates.html">Flowers And Chocolates</a>
+                        <h3>Occasion Combo</h3>
+                        <a href="anniversary.html">Anniversary Combo</a>
+                        <a href="birthday-combos.html">Birthday Combo</a>
+                    </div>
+                    <div class="column">
+                        <a href="#"><img src="https://assets.winni.in/groot/2023/11/20/combos/best-seller-combos.jpg" alt="Best Seller Combos"></a>
+                        <a href="#"><img src="https://assets.winni.in/groot/2023/11/20/combos/express-combo-delivery.jpg" alt="Express Combo Delivery"></a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">BIRTHDAY</a></li>
+            <li><a href="#">ANNIVERSARY</a></li>
+            <li><a href="#">OCCASIONS</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Cake Combos</h1>
+        <div class="filter-sort">
+            <div class="filter-option">
+                <label for="delivery-date">Delivery Date:</label>
+                <input type="date" id="delivery-date">
+            </div>
+            <div class="filter-option">
+                <label for="filter-price">Filter By Price:</label>
+                <select id="filter-price">
+                    <option value="all">All Products</option>
+                    <option value="low-to-high">Low to High</option>
+                    <option value="high-to-low">High to Low</option>
+                </select>
+            </div>
+            <div class="filter-option">
+                <label for="sort-by">Sort By:</label>
+                <select id="sort-by">
+                    <option value="popularity">Popularity</option>
+                    <option value="rating">Rating</option>
+                    <option value="newest">Newest</option>
+                </select>
+            </div>
+        </div>
+        <div id="product-grid" class="product-grid">
+            <!-- Products will be dynamically inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Welcome to Celebration Relations, your one-stop shop for all your gifting needs. We offer a wide range of cakes, flowers, combos, gifts, and more to make every occasion special.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://i.pinimg.com/originals/ea/18/f4/ea18f407cfaed0202d265cf6cf1ac62b.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://clipart.info/images/ccovers/1534043160twitter-logo-png-black.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://i.pinimg.com/736x/02/77/12/027712250a632b2e6f63c5466b792494.jpg" alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/linkedin-512.png" alt="LinkedIn"></a>
+                      </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Celebration Relations. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    <script src="express-js.js" defer></script> 
+    <script src="script.js"></script><!-- Link to your JS file -->
+</body>
+</html>

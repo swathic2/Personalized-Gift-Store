@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product-details</title>
+    <link rel="stylesheet" href="styles.css">
+   
+    <style>
+        /* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #f9f7f7;
+    color: #0e0d0d;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 1500px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-panel {
+    flex: 1;
+    margin-right: 20px; /* Adjust spacing between left and right panels */
+}
+
+.left-panel img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.right-panel {
+    flex: 2; /* Adjust the width ratio of left and right panels */
+}
+
+.right-panel h2 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.right-panel p {
+    margin: 0.5rem 0;
+}
+
+.qa-section {
+    margin-top: 20px; /* Adjust margin between product info and Q&A section */
+}
+
+.qa-section h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.qa-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.qa-item .question {
+    font-weight: bold;
+}
+
+.qa-item .answer {
+    margin-top: 5px;
+}
+
+.qa-item .helpful-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.qa-item .helpful-btn:hover {
+    background-color: #0056b3;
+}
+
+.rating {
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.price span {
+    font-size: 20px;
+    color: #070505;
+}
+
+.weight-options label {
+    margin-right: 10px;
+}
+
+.eggless-option {
+    margin-top: 10px;
+}
+
+.message-on-cake {
+    margin-top: 10px;
+}
+
+.message-on-cake input {
+    width: 30%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.delivery {
+    margin-top: 10px;
+}
+
+.delivery input {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+.delivery button {
+    padding: 8px 12px;
+}
+
+.delivery p {
+    margin: 5px 0;
+}
+
+.add-to-cart {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.add-to-cart:hover {
+    background-color: #298b48;
+}
+
+.questions {
+            margin-top: 20px;
+            width: 80%;
+        }
+        .question-item {
+            margin-bottom: 15px;
+        }
+        .question-item .question {
+            font-weight: bold;
+        }
+        .question-item .answer {
+            margin-left: 20px;
+            color: green;
+        }
+        .question-item .helpful-btn {
+            margin-left: 20px;
+            padding: 5px 10px;
+            background-color: #938b8b;
+            border:#0c0b0b;
+            cursor: pointer;
+        }
+        .thank-you {
+            color: green;
+            font-weight: bold;
+        }
+        .reviews h2 {
+            margin-top: 0;
+        }
+        .review-item {
+            margin-bottom: 20px;
+        }
+        .review-item .review-rating {
+            color: green;
+            font-size: 20px;
+        }
+        .review-item .review-text {
+            margin: 5px 0;
+        }
+        .review-item .helpful-btn {
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .weight-selection {
+            margin: 20px 0;
+        }
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .image-container {
+        position: relative;
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .zoomed-image {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        display: none;
+    }
+
+    .zoomed-image img {
+        position: absolute;
+        width: 600px; /* Twice the original image size */
+        height: 600px; /* Twice the original image size */
+        transform: scale(2);
+        transform-origin: top left;
+    }
+    
+</style>
+</head>
+<body >
+    <header>
+        <div class="logo-title-container">
+            <div class="logo">
+                <img src="https://i.pinimg.com/originals/02/cf/dd/02cfdd647990ccda91941d30314ac115.gif" width="100" height="100" alt="Logo">
+
+            </div>
+            <div class="title">
+                <h1>WELCOME</h1>
+            </div>
+        </div>
+        <div class="search-bar">
+            <form id="search-form" action="javascript:void(0);">
+                <input type="text" id="search-input" placeholder="Search for gifts">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="location-dropdown">
+            <div class="location-select-container">
+                <img src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-vector-location-icon-png-image_5159127.jpg" alt="Location Icon" width="20" height="20">
+
+                <select id="location-select">
+                    <option value="Bangalore" selected>Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+                
+            </div>
+        </div>
+        <div class="user-options">
+            <div class="wishlist-dropdown">
+                <a href="wishlist.html"><button>Wishlist</button></a>
+                <div class="wishlist-dropdown-content">
+                    <!-- Wishlist options can be added here -->
+                </div>
+            </div>
+            <div class="cart-dropdown">
+                <a href="cart.html"><button>Cart</button></a>
+                <div class="cart-dropdown-content">
+                    <!-- Cart options can be added here -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">EXPRESS</a></li>
+            <li><a href="#">CAKES</a></li>
+            <li><a href="#">FLOWERS</a></li>
+            <li><a href="#">PLANTS</a></li>
+            <li><a href="#">GIFTS</a></li>
+            <li><a href="#">PERSONALIZED GIFTS</a></li>
+            <li class="dropdown">
+                <a href="#">COMBOS</a>
+                <div class="dropdown-content">
+                    <div class="column">
+                        <h3>Combos By Type</h3>
+                        <a href="all-combos.html">All Combos</a>
+                        <a href="best-seller.html">Best Seller</a>
+                        <a href="new-arrival.html">New Arrival</a>
+                        <a href="Premium.html">Premium Combos</a>
+                    </div>
+                    <div class="column">
+                        <h3>Exclusive Combos</h3>
+                        <a href="cake-combos.html">All Cake Combos</a>
+                        <a href="flower-combos.html">All Flower Combos</a>
+                
+                        <a href="express-combos.html">Express Combos Delivery</a>
+                        <a href="personalised-combos.html">Personalised Combos Gifts</a>
+                    </div>
+                    <div class="column">
+                        <h3>Featured Combos</h3>
+                        <a href="flower-combos.html">Cakes And Flowers</a>
+                        <a href="flowersandchocolates.html">Flowers And Chocolates</a>
+                        <h3>Occasion Combo</h3>
+                        <a href="anniversary.html">Anniversary Combo</a>
+                        <a href="birthday-combos.html">Birthday Combo</a>
+                    </div>
+                    <div class="column">
+                        <a href="#"><img src="https://assets.winni.in/groot/2023/11/20/combos/best-seller-combos.jpg" alt="Best Seller Combos"></a>
+                        <a href="#"><img src="https://assets.winni.in/groot/2023/11/20/combos/express-combo-delivery.jpg" alt="Express Combo Delivery"></a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">BIRTHDAY</a></li>
+            <li><a href="#">ANNIVERSARY</a></li>
+            <li><a href="#">OCCASIONS</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="product-details">
+            <div class="left-panel">
+                <div class="image-container">
+                    <img id="product-image" src="" alt="Product Image" id="mainImage">
+                    <div class="zoomed-image" id="zoomedImage">
+                        <img src="" alt="Zoomed Image">
+                    </div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <h2 id="product-name"></h2>
+                <p id="product-price" class="price">Price: ₹<span id="price">0</span></p>
+                 <p id="product-rating"></p>
+                
+
+                <label for="weight">Select Weight: </label><br>
+            <br><div class="weight-options">
+                <label><input type="radio" name="weight" value="500gm" data-price="1129" onchange="updatePrice()"> 500 gm</label>
+                <label><input type="radio" name="weight" value="1kg" data-price="1629" onchange="updatePrice()"> 1 kg</label>
+                <label><input type="radio" name="weight" value="1.5kg" data-price="2129" onchange="updatePrice()"> 1.5 kg</label>
+                <label><input type="radio" name="weight" value="2kg" data-price="2729" onchange="updatePrice()"> 2 kg</label>
+                <label><input type="radio" name="weight" value="3kg" data-price="3829" onchange="updatePrice()"> 3 kg</label>
+                <label><input type="radio" name="weight" value="4kg" data-price="4929" onchange="updatePrice()"> 4 kg</label>
+            </div><br>
+
+            <div class="eggless-option">
+                <label><input type="checkbox" id="eggless" name="eggless" onchange="updatePrice()"> Eggless (+₹100)</label>
+            </div><br>
+            <div class="message-on-cake">
+                <input type="text" id="message" name="message" placeholder="Message on cake">
+            </div><br>
+            <div class="delivery">
+                <input type="text" id="pincode" name="pincode" placeholder="Enter pincode">
+                <button type="button">Check</button>
+            </div>
+            <button onclick="addToCart('Red Roses Bouquet With Chocolate Cake', 'img1.png')" class="add-to-cart">ADD TO CART</button>
+
+
+
+            <div class="offers">
+                <p>Available offers</p>
+                <ul>
+                    <li>Get upto ₹750 Cashback on paying via Mobikwik <a href="#">*T&C</a></li>
+                    <li>Use Coupon Code: TRYWINNI to get 20% off</li>
+                    <li>Use Coupon Code: WIN50 to get ₹50 off</li>
+                </ul>
+            </div>
+            <div class="description">
+                <h2>Product Description</h2>
+                <ul>
+                    <li>Flower Type: Red Roses</li>
+                    <li>No. of Stems: 6</li>
+                    <li>Fillers: Green Seasonal Fillers</li>
+                    <li>Packing: Non Woven Fabric</li>
+                    <li>Packing Color: Red</li>
+                    <li>No. of Packing: 2 Layer</li>
+                    <li>Ribbons: Red</li>
+                    <li>Cake Flavour: Chocolate</li>
+                    <li>Shape: Round</li>
+                    <li>Type of Cake: Cream</li>
+                    <li>Type of Sponge: Chocolate</li>
+                    <li>Type of Cream: Chocolate</li>
+                    <li>Filling in Layers: Chocolate Cream</li> 
+                    <li>Toppings: Chocolate Garnish</li>
+                </ul>
+            </div>
+            <div class="delivery details">
+                <h2>Delivery details</h2>
+                <ul>
+                    <li>Only for reference purposes is the product shown in the picture.</li>
+                    <li>Depending on what's available, the shape and design of the final product may change.</li>
+                    <li>Your order won't be delivered elsewhere; it will be sent to the address you provide.</li>  
+                    <li>Flowers may be provided as blooms, semi-blooms, or buds.</li> 
+                    <li>The two different orders placed with our portal won't come at the same time.</li>
+                    <li>Our delivery boy hand-deliver the delicious cake in a good quality cardboard box.</li>
+                    <li>Candles and knife will be delivered as per availability</li>
+                    <li>Every cake we offer is handcrafted, and since each chef has his/her own way of baking and designing a cake, there might be slight variation in the product in terms of design and shape.</li>
+                    <li>We promise express delivery to provide superior customer services and gain a competitive edge.</li>
+                </ul>
+            </div>
+            <div class="Care Instructions">
+                <h2>Care Instructions</h2>
+                <ul>
+                    <li>First, remove the bouquet wrapper.</li>
+                    <li>To keep the flower fresh for a long time, cut the stems one or two inches from the bottom.</li>
+                    <li>Pick a vase and put water in it.</li>
+                    <li>To avoid the growth of the bacteria, remove the leaves from below the water line.</li>
+                    <li>To keep the bloom fresh for a long time, mix two teaspoons of sugar and lemon juice in the water.</li>
+                    <li>Place the vase far away from direct sunlight.</li>
+                    <li>Store the cake in a refrigerator.</li>
+                    <li>Consume the cake within 24 hours.</li>
+                </ul>
+            </div>
+            <div class="Please note">
+                <h2>Please Note:</h2>
+                <ul>
+                    <li>The accessories used in the image is for reference purpose only.</li>
+                    <li>The cake will be hand-delivered to the desired place.</li>
+                    <li>Candles and Plastic knives are included (except in Bangalore, Pune, and other cities where plastic is prohibited.</li>
+                    <li>Non-woven fabric wrapping is replaced with paper wrapping in Bangalore, Mumbai, Pune, and other cities as per government rule. </li>
+                    <li>Green fillers may vary as per availability.</li>
+                    <li>The color of the bow (thread or ribbon), may be changed according to availability.</li>
+
+                </ul>
+            </div>
+            <div class="questions">
+                <h2>Questions & Answers</h2>
+                <div class="question-item">
+                    <div class="question">Question: Can you deliver done at 12 midnight</div>
+                    <div class="answer">Answer: Yes, midnight delivery is available but it depends on the area so share the Pincode so we will check the service.</div>
+                    <button class="helpful-btn" onclick="showThankYou(this)">Helpful</button>
+                </div>
+                <div class="question-item">
+                    <div class="question">Question: Can you deliver the cake at 11 o'clock Midnight</div>
+                    <div class="answer">Answer: Yes, midnight delivery is available but it depends on the area so share the Pincode so we will check the service.</div>
+                    <button class="helpful-btn" onclick="showThankYou(this)">Helpful</button>
+                </div>
+                <div class="question-item">
+                    <div class="question">Question: Can you deliver for Dubai?</div>
+                    <div class="answer">Answer: Yes, we have an international delivery service. You need to check/mark in the navigation international option. Or you can reach us at 7829463510 for more details.</div>
+                    <button class="helpful-btn" onclick="showThankYou(this)">Helpful</button>
+                </div>
+                <div class="question-item">
+                    <div class="question">Question: Will you deliver at 12 in the midnight</div>
+                    <div class="answer">Answer: Yes, midnight delivery is available but it depends on the area so share the Pincode so we will check the service.</div>
+                    <button class="helpful-btn" onclick="showThankYou(this)">Helpful</button>
+                </div>
+            </div>
+            <div class="reviews">
+                <h2>Product Reviews</h2>
+                <div class="review-summary">
+                    <div class="review-rating">
+                        <strong>4.3</strong> <span>★</span>
+                    </div>
+                    <div>Rating & 6 reviews</div>
+                    <div class="rating-breakdown">
+                        5 ★★★★☆ 3<br>
+                        4 ★★★☆☆ 2<br>
+                        3 ★★★☆☆ 1<br>
+                        2 ★☆☆☆☆ 0<br>
+                        1 ★☆☆☆☆ 0<br>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <div class="review-rating">3 ★</div>
+                    <div class="review-author">Neha</div>
+                    <div class="review-date">Reviewed on Feb 14, 2024</div>
+                    <div class="review-text">Flowers are fresh n awesome. Cake is ok because cake is so simple design.. delivery very fast.</div>
+                    <button class="helpful-btn" onclick="showThankYou(this)">Helpful</button>
+                </div>
+                <div class="review-item">
+                    <div class="review-rating">5 ★</div>
+                    <div class="review-author">Rupali</div>
+                    <div class="review-date">Reviewed on Jan 9, 2024</div>
+                    <div class="review-text">I really love this</div>
+                    <button class="helpful-btn" onclick="showThankYou(this)">Helpful</button>
+                </div>
+                <div class="review-item">
+                    <div class="review-rating">4 ★</div>
+                    <div class="review-author">Apeksha Sonwane</div>
+                    <div class="review-date">Reviewed on Dec 24, 2023</div>
+                    <div class="review-text">Good. Test is good</div>
+                    <button class="helpful-btn" onclick="showThankYou(this)">Helpful</button>
+                </div>
+            </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Welcome to Celebration Relations, your one-stop shop for all your gifting needs. We offer a wide range of cakes, flowers, combos, gifts, and more to make every occasion special.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://i.pinimg.com/originals/ea/18/f4/ea18f407cfaed0202d265cf6cf1ac62b.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://clipart.info/images/ccovers/1534043160twitter-logo-png-black.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://i.pinimg.com/736x/02/77/12/027712250a632b2e6f63c5466b792494.jpg" alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/linkedin-512.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Celebration Relations. All rights reserved.</p>
+        </div>
+    </footer>
+
+   
+<script src="details-bday.js" defer></script>
+<script src="script.js"></script>
+<script src="birthday-js.js" defer></script>
+</body>
+</html>

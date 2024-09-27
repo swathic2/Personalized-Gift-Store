@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Store</title>
+    <link rel="stylesheet" href="styleh.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+	<style>
+	body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://img.freepik.com/free-psd/3d-background-with-valentines-day-sale_23-2150049711.jpg?w=996&t=st=1719678451~exp=1719679051~hmac=0a9c5549635e95461bcdd9e212623948dbb2a02789918dc71938303245e4d892');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    font-family: 'Baloo 2', cursive;
+}
+
+
+.container {
+    text-align: center;
+    background: rgba(252, 252, 252, 0.138);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3em;
+    margin: 20px 0;
+    color: rgba(249, 97, 122, 0.794);
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #757575;
+    font-family: cursive;
+}
+
+.animation {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.child {
+    width: 50px;
+    height: 50px;
+    background-color:rgba(249, 97, 122, 0.794);
+    border-radius: 50%;
+    animation: excited 1s infinite alternate;
+}
+
+.child1 {
+    animation-delay: 0s;
+}
+
+.child2 {
+    animation-delay: 0.2s;
+}
+
+.child3 {
+    animation-delay: 0.4s;
+}
+
+@keyframes excited {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color:rgba(249, 97, 122, 0.794);
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #4f011a;
+    transform: translateY(-2px);
+}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div class="animation">
+            <div class="child child1"></div>
+            <div class="child child2"></div>
+            <div class="child child3"></div>
+        </div>
+        <h1>Welcome to the Gift Store</h1>
+        <p class="tagline"><i>-Place where you find and share happiness</i></p>
+        <a href="login.jsp" class="explore-button">Start Exploring</a>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

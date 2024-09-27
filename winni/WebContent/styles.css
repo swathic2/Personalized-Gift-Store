@@ -1,0 +1,797 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.location-dropdown {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.location-dropdown img {
+    margin-right: 10px;
+}
+
+#location-select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #e18d8d74;
+    cursor: pointer;
+}
+/* Add or modify styles as needed */
+.location-select-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #e18d8d74;
+}
+
+.location-select-container img {
+    margin-right: 10px;
+}
+
+/* Adjust other styles as per your design requirements */
+
+
+.logo-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+}
+
+.title {
+    margin: 0;
+    font-family: cursive;
+    padding-left: 10px; /* Adjust this value as needed */
+}
+
+.search-bar input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+}
+
+.location span {
+    background-color: #e18d8d74;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-options button {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Adjusted styles for the dropdown content */
+.dropdown {
+    position: relative; /* Ensure the parent li has relative positioning */
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    left: -700px;
+    right: auto;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1200px; /* Adjusted to align with the left margin of the website */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 800px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1000;
+    justify-content: space-between;
+}
+
+.dropdown-content .column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.dropdown-content .column h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dropdown-content .column a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.dropdown-content .column a:hover {
+    color: #e91e63;
+}
+
+.dropdown-content .column img {
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    
+    .dropdown-content {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        padding: 10px 0;
+    }
+
+    .dropdown-content .column {
+        margin: 10px 0;
+    }
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #d3d3d3e0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width:auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+nav ul li .dropdown-content .dropdown-section {
+    margin-bottom: 10px;
+}
+
+nav ul li .dropdown-content .dropdown-section h4 {
+    margin-top: 0;
+}
+
+nav ul li .dropdown-content .dropdown-section a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    margin: 5px 0;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    padding: 20px;
+}
+
+
+
+.slider {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.slides {
+    display: flex;
+    width: 500%; /* 5 slides */
+    height: 100%;
+    animation: slideAnimation 20s infinite;
+}
+
+.slide {
+    width: 20%; /* 100% / number of slides */
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes slideAnimation {
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(0%); }
+    25% { transform: translateX(-20%); }
+    45% { transform: translateX(-20%); }
+    50% { transform: translateX(-40%); }
+    70% { transform: translateX(-40%); }
+    75% { transform: translateX(-60%); }
+    95% { transform: translateX(-60%); }
+    100% { transform: translateX(-80%); }
+}
+
+.category-cushions {
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/cushions.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-mugs {
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/mugs.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-lamps {
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/lamps.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-bottles{
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/water-bottles.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-tshirt{
+    background-image: url('https://assets.winni.in/groot/2023/04/18/desktop/personalised-gifts/t-shirt.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-art{
+    background-image: url('https://assets.winni.in/groot/2023/04/18/desktop/personalised-gifts/photo-to-art.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-caricature{
+    background-image: url('https://assets.winni.in/groot/2023/04/18/desktop/personalised-gifts/caricature.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-chocolates{
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/chocolate.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-beer{
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/beer-mugs.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Ensure categories wrap properly */
+    margin-bottom: 20px; /* Optional: Adjust margin as needed */
+
+}
+
+.category-cushions,
+.category-mugs,
+.category-lamps,
+.category-bottles,
+.category-tshirt,
+.category-art,
+.category-caricature,
+.category-chocolates,
+.category-beer {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 10px;
+    height: 250px;
+    flex: 0 1 calc(11.11% - 20px); /* Adjust for nine items per row */
+    max-width: calc(11.11% - 20px); /* Ensure items don't overflow their container */
+    
+}
+
+@media (max-width: 1200px) {
+    .category-cushions,
+    .category-mugs,
+    .category-lamps,
+    .category-bottles,
+    .category-tshirt,
+    .category-art,
+    .category-caricature,
+    .category-chocolates,
+    .category-beer {
+        flex: 0 1 calc(50% - 20px); /* Adjust for two items per row on smaller screens */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .category-cushions,
+    .category-mugs,
+    .category-lamps,
+    .category-bottles,
+    .category-tshirt,
+    .category-art,
+    .category-caricature,
+    .category-chocolates,
+    .category-beer {
+        flex: 1 1 calc(100% - 20px); /* Adjust for one item per row on mobile screens */
+        max-width: calc(100% - 20px);
+    }
+}
+
+.account-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.account-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.account-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.account-dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.account-dropdown:hover .account-dropdown-content {
+    display: block;
+}
+
+/* Adjusted styles for Wishlist and Cart */
+.wishlist-dropdown,
+.cart-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px; /* Adjust as needed for spacing */
+}
+
+.wishlist-dropdown-content,
+.cart-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 5px; /* Adjust as needed for spacing */
+}
+
+.wishlist-dropdown:hover .wishlist-dropdown-content,
+.cart-dropdown:hover .cart-dropdown-content {
+    display: block;
+}
+
+.wishlist-dropdown-content a,
+.cart-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.wishlist-dropdown-content a:hover,
+.cart-dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.subcategories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.subcategories button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+/* Modal styles */
+/* Add this CSS for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/styles for cake combo/
+
+
+.filter-sort {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+}
+
+.filter-option label {
+    margin-right: 10px;
+}
+
+.filter-option select,
+.filter-option input[type="date"] {
+    padding: 5px;
+}
+
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; /* Ensure equal spacing between items */
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: calc(25% - 20px); /* Calculate 25% width minus the gap */
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product .original-price {
+    text-decoration: line-through;
+}
+
+.product .discount {
+    color: red;
+}
+
+.product .rating {
+    color: #ff9800;
+}
+
+@media (max-width: 1024px) {
+    .product {
+        width: calc(33.33% - 20px); /* Show 3 products per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: calc(50% - 20px); /* Show 2 products per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%; /* Show 1 product per row on extra small screens */
+    }
+}
+
+
+/* Additional styles for the modal */
+/* General styles for modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal content styles */
+.modal-content {
+    background-color: rgba(132, 28, 28, 0.374);
+    margin: 10% auto;
+    padding: 20px;
+    border: none;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.587);
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    font-family: cursive;
+    text-align: center;
+
+}
+
+/* Close button styles */
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.modal-content input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: #741a1a89;
+    font-size: 18px;
+}
+
+.modal-content a {
+    color: #ece7e6f7;
+    text-decoration: none;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+/* Error message styles */
+.error {
+    color: #ece1e1;
+    display: none;
+}
+
+
+/* Add your existing CSS styles here */
+.favorite-btn {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cebebe; /* Empty heart color */
+}
+
+.favorite-btn.active {
+    color: red; /* Filled heart color */
+}
+
+
+footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    color: #333;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+#newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#newsletter-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+#newsletter-form button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#newsletter-form button:hover {
+    background-color: #555;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* src/input.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

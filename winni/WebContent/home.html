@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Gifts</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    
+.category-cushions {
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/cushions.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-mugs {
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/mugs.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-lamps {
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/lamps.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-bottles{
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/water-bottles.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-tshirt{
+    background-image: url('https://assets.winni.in/groot/2023/04/18/desktop/personalised-gifts/t-shirt.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-art{
+    background-image: url('https://assets.winni.in/groot/2023/04/18/desktop/personalised-gifts/photo-to-art.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-caricature{
+    background-image: url('https://assets.winni.in/groot/2023/04/18/desktop/personalised-gifts/caricature.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-chocolates{
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/chocolate.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+.category-beer{
+    background-image: url('https://assets.winni.in/groot/2023/04/21/desktop/personalised-gifts/beer-mugs.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Ensure categories wrap properly */
+    margin-bottom: 20px; /* Optional: Adjust margin as needed */
+
+}
+
+.category-cushions,
+.category-mugs,
+.category-lamps,
+.category-bottles,
+.category-tshirt,
+.category-art,
+.category-caricature,
+.category-chocolates,
+.category-beer {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 10px;
+    height: 250px;
+    flex: 0 1 calc(11.11% - 20px); /* Adjust for nine items per row */
+    max-width: calc(11.11% - 20px); /* Ensure items don't overflow their container */
+    
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-title-container">
+            <div class="logo">
+                <img src="https://i.pinimg.com/originals/02/cf/dd/02cfdd647990ccda91941d30314ac115.gif" width="100" height="100" alt="Logo">
+            </div>
+            <div class="title">
+                <h1>WELCOME</h1>
+            </div>
+        </div>
+        <div class="search-bar">
+            <form id="search-form" action="javascript:void(0);">
+                <input type="text" id="search-input" placeholder="Search for gifts">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="location-dropdown">
+            <div class="location-select-container">
+                <img src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-vector-location-icon-png-image_5159127.jpg" alt="Location Icon" width="20" height="20">
+                <select id="location-select">
+                    <option value="Bangalore" selected>Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+            </div>
+        </div>
+        <div class="user-options">
+            <div class="wishlist-dropdown">
+                <a href="wishlist.html"><button>Wishlist</button></a>
+                <div class="wishlist-dropdown-content">
+                    <!-- Wishlist options can be added here -->
+                </div>
+            </div>
+            <div class="cart-dropdown">
+                <a href="cart.html"><button>Cart</button></a>
+                <div class="cart-dropdown-content">
+                    <!-- Cart options can be added here -->
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">EXPRESS</a></li>
+            <li><a href="#">CAKES</a></li>
+            <li><a href="#">FLOWERS</a></li>
+            <li><a href="#">PLANTS</a></li>
+            <li><a href="#">GIFTS</a></li>
+            <li><a href="#">PERSONALIZED GIFTS</a></li>
+            <li class="dropdown">
+                <a href="#">COMBOS</a>
+                <div class="dropdown-content">
+                    <div class="column">
+                        <h3>Combos By Type</h3>
+                        <a href="all-combos.html">All Combos</a>
+                        <a href="best-seller.html">Best Seller</a>
+                        <a href="new-arrival.html">New Arrival</a>
+                        <a href="Premium.html">Premium Combos</a>
+                    </div>
+                    <div class="column">
+                        <h3>Exclusive Combos</h3>
+                        <a href="cake-combos.html">All Cake Combos</a>
+                        <a href="flower-combos.html">All Flower Combos</a>
+                
+                        <a href="express-combos.html">Express Combos Delivery</a>
+                        <a href="personalised-combos.html">Personalised Combos Gifts</a>
+                    </div>
+                    <div class="column">
+                        <h3>Featured Combos</h3>
+                        <a href="flower-combos.html">Cakes And Flowers</a>
+                        <a href="flowersandchocolates.html">Flowers And Chocolates</a>
+                        <h3>Occasion Combo</h3>
+                        <a href="anniversary.html">Anniversary Combo</a>
+                        <a href="birthday-combos.html">Birthday Combo</a>
+                    </div>
+                    <div class="column">
+                        <a href="#"><img src="https://assets.winni.in/groot/2023/11/20/combos/best-seller-combos.jpg" alt="Best Seller Combos"></a>
+                        <a href="#"><img src="https://assets.winni.in/groot/2023/11/20/combos/express-combo-delivery.jpg" alt="Express Combo Delivery"></a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">BIRTHDAY</a></li>
+            <li><a href="#">ANNIVERSARY</a></li>
+            <li><a href="#">OCCASIONS</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="banner">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide" style="background-image: url('https://assets.winni.in/sf-img/live/visuals/home/desktop/2024/5/1714710053523.jpg');"></div>
+                    <div class="slide" style="background-image: url('https://assets.winni.in/sf-img/live/visuals/home/desktop/2024/6/1717579378093.jpg');"></div>
+                    <div class="slide" style="background-image: url('https://assets.winni.in/sf-img/live/visuals/home/desktop/2024/5/1715681603912.jpg');"></div>
+                    <div class="slide" style="background-image: url('https://assets.winni.in/sf-img/live/visuals/home/desktop/2024/6/1718860097225.jpg');"></div>
+                    <div class="slide" style="background-image: url('https://assets.winni.in/sf-img/live/visuals/home/desktop/2024/4/1712552211535.jpg');"></div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="categories">
+            <div class="category-item category-cushions"></div>
+            <div class="category-item category-mugs"></div>
+            <div class="category-item category-lamps"></div>
+            <div class="category-item category-bottles"></div>
+            <div class="category-item category-tshirt"></div>
+            <div class="category-item category-art"></div>
+            <div class="category-item category-caricature"></div>
+            <div class="category-item category-chocolates"></div>
+            <div class="category-item category-beer"></div>
+        </section>
+        <section class="subcategories">
+            <button>Jewellery</button>
+            <button>Key Chain</button>
+            <button>Clutches</button>
+            <button>Stationery</button>
+            <button>Personalized Combos</button>
+            <button>Handbag</button>
+            <button>Handmade Gifts</button>
+            <button>Clocks</button>
+            <button>Engraved Gifts</button>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Welcome to Celebration Relations, your one-stop shop for all your gifting needs. We offer a wide range of cakes, flowers, combos, gifts, and more to make every occasion special.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://i.pinimg.com/originals/ea/18/f4/ea18f407cfaed0202d265cf6cf1ac62b.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://clipart.info/images/ccovers/1534043160twitter-logo-png-black.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://i.pinimg.com/736x/02/77/12/027712250a632b2e6f63c5466b792494.jpg" alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/linkedin-512.png" alt="LinkedIn"></a> 
+ </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Celebration Relations. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

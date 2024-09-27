@@ -1,0 +1,267 @@
+body {
+    font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    background-color: #ffcccb;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+}
+.title h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.progress .step {
+    width: 24%;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.progress .step.active {
+    background-color: #ff6699;
+            color: white;
+        
+}
+
+.payment-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-method {
+    width: 30%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border-right: 1px solid #ddd;
+}
+
+.payment-method ul {
+    list-style: none;
+    padding: 0;
+}
+
+.payment-method li {
+    margin: 10px 0;
+}
+
+.payment-method a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.payment-method a:hover {
+    background-color: #f1f1f1;
+}
+
+.payment-option {
+    width: 70%;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.payment-option img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.payment-option button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.payment-option button:hover {
+    background-color: #45a049;
+}
+.payment-details {
+    display: none;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.payment-details label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.payment-details input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.payment-details button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #45a049;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.payment-details button:hover {
+    background: #28a745;
+}
+
+.order-summary {
+    width: 28%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.order-summary h2 {
+    color: #333;
+}
+
+.order-summary button {
+    background-color: #ff4081;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.order-summary button:hover {
+    background-color: #e91e63;
+}
+
+.price-details p,
+.price-details h3 {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.price-details h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.sender-details,
+.delivery-time {
+    margin-top: 20px;
+}
+#upi img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #upi button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #upi button:hover {
+            background-color: #45a049;
+        }
+        #netbanking .banks {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        #netbanking .banks img {
+            width: 50px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        #netbanking .other-options {
+            margin: 20px 0;
+        }
+        
+        #netbanking .other-options select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .pay-button {
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        
+        .pay-button:hover {
+            background-color: #45a049;
+        }
+
+        #qr-code-container { display: none; text-align: center; margin-top: 20px; }
+
+        

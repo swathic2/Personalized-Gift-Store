@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Winni</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Navbar -->
+    <div class="bg-white shadow-md">
+        <div class="container mx-auto px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="https://i.pinimg.com/originals/02/cf/dd/02cfdd647990ccda91941d30314ac115.gif" width="100" height="100" alt="Logo">
+            </div>
+            <!-- Search and options -->
+            <div class="flex-1 mx-8">
+                <input type="text" placeholder="Search for gifts" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none">
+            </div>
+            <div class="flex items-center space-x-4">
+                <span><i class="fas fa-map-marker-alt text-gray-600"></i> Delivery Location</span>
+                <div class="relative">
+                    <span class="text-gray-600">INR</span> <i class="fas fa-chevron-down"></i>
+                </div>
+                <span>Corporate Gifts</span>
+                <span>Partner With Us</span>
+                <span>Track Order</span>
+                <span><i class="fas fa-heart text-red-500"></i> 2 hour Delivery</span>
+                <!-- Cart icon -->
+                <div class="relative cursor-pointer" onclick="redirectToCart()">
+                    <i class="fas fa-shopping-cart text-gray-600 text-2xl"></i>
+                    <span id="cart-count" class="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Page Content -->
+    <div class="container mx-auto px-8 py-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+            <h2 class="text-2xl font-bold mb-4">Shopping Cart</h2>
+            <div id="cart-items" class="grid grid-cols-1 gap-4">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div>
+                <a href="home.html" class="text-purple-500 hover:underline">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+            <div class="mb-4">
+                <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span id="subtotal" class="font-semibold">₹0</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Delivery Charges</span>
+                    <span id="delivery-charges" class="font-semibold">₹0</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Tax & GST</span>
+                    <span id="tax-gst" class="font-semibold">₹0</span>
+                </div>
+                <hr class="my-2">
+                <div class="flex justify-between text-lg font-bold">
+                    <span>Total</span>
+                    <span id="total-cost">₹0</span>
+                </div>
+            </div>
+<button class="bg-green-500 text-white w-full py-2 rounded" onclick="window.location.href='checkout.html'">Proceed</button>
+        </div>
+    </div>
+
+    <!-- Addons Section -->
+    <div class="container mx-auto px-8 py-4">
+        <h2 class="text-xl font-semibold mb-4">Make it special with Addons</h2>
+        <div class="flex flex-wrap -mx-2" id="addons">
+            <div class="w-1/4 p-2">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <img src="https://assets.winni.in/product/primary/2014/6/34225.jpeg?dpr=1&w=300" alt="Magic Candle" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2">Magic Candle</h3>
+                    <p class="text-gray-600 mb-4">₹49</p>
+                    <button class="bg-purple-500 text-white px-4 py-2 rounded add-addon-btn" data-name="Magic Candle" data-price="49" data-image="https://assets.winni.in/product/primary/2014/6/34225.jpeg?dpr=1&w=300">Add To Cart</button>
+                </div>
+            </div>
+            <div class="w-1/4 p-2">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <img src="https://assets.winni.in/product/primary/2014/6/30426.jpeg?dpr=1&w=300" alt="Greeting Card" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2">Greeting Card</h3>
+                    <p class="text-gray-600 mb-4">₹99</p>
+                    <button class="bg-purple-500 text-white px-4 py-2 rounded add-addon-btn" data-name="Greeting Card" data-price="99" data-image="https://assets.winni.in/product/primary/2014/6/30426.jpeg?dpr=1&w=300">Add To Cart</button>
+                </div>
+            </div>
+            <div class="w-1/4 p-2">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <img src="https://assets.winni.in/product/primary/2023/1/82609.jpeg?dpr=1&w=300" alt="5 Dairy Milk Chocolates" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2">5 Dairy Milk Chocolates</h3>
+                    <p class="text-gray-600 mb-4">₹149</p>
+                    <button class="bg-purple-500 text-white px-4 py-2 rounded add-addon-btn" data-name="5 Dairy Milk Chocolates" data-price="149" data-image="https://assets.winni.in/product/primary/2023/1/82609.jpeg?dpr=1&w=300">Add To Cart</button>
+                </div>
+            </div>
+            <div class="w-1/4 p-2">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <img src="https://assets.winni.in/product/primary/2022/7/71963.jpeg?dpr=1&w=300" alt="Small White Teddy Bear" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold mb-2">Small White Teddy Bear</h3>
+                    <p class="text-gray-600 mb-4">₹279</p>
+                    <button class="bg-purple-500 text-white px-4 py-2 rounded add-addon-btn" data-name="Small White Teddy Bear" data-price="279" data-image="https://assets.winni.in/product/primary/2022/7/71963.jpeg?dpr=1&w=300">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="cart-js.js"></script>
+</body>
+</html>

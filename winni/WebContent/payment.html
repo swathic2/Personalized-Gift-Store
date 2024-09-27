@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="stylesp.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-title-container">
+                <div class="logo">
+                    <img src="https://i.pinimg.com/originals/02/cf/dd/02cfdd647990ccda91941d30314ac115.gif" width="100" height="100" alt="Logo">
+                </div>
+                <div class="title">
+                    <h1>WELCOME</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="progress">
+            <div class="step">Cart</div>
+            <div class="step">Address</div>
+            <div class="step">Personalize</div>
+            <div class="step active">Payment</div>
+        </div>
+        <div class="payment-section">
+            <div class="payment-method">
+                <ul>
+                    <li onclick="showPaymentOption('upi')"><a href="#">UPI</a></li>
+                    <li onclick="showPaymentOption('card')"><a href="#">Credit/Debit Card</a></li>
+                    <li onclick="showPaymentOption('netbanking')"><a href="#">Netbanking</a></li>
+                </ul>
+            </div>
+            <div class="payment-option">
+                <div id="upi" class="payment-details">
+                    <img src="data:image/png;base64,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" alt="UPI Logo">
+                    <button onclick="showQRCode()">Pay With QR Code</button>
+                    <div id="qr-code-container">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.-9N4K3Syg-OgbET8dgDwqAHaHa?w=208&h=208&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="QR Code">
+                        <button onclick="QRCodealert()">Continue</button>
+                    </div>
+                </div>
+                <div id="card" class="payment-details" style="display: none;">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card-number"><br>
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" name="card-name"><br>
+                    <label for="card-expiry">Expiry Date</label>
+                    <input type="text" id="card-expiry" name="card-expiry"><br>
+                    <label for="card-cvv">CVV</label>
+                    <input type="text" id="card-cvv" name="card-cvv">
+                    <button onclick="payNow()">Pay Now</button>
+                </div>
+            
+                <div id="netbanking" class="payment-details" style="display: none;">
+                    <div class="banks">
+                        <img src="https://th.bing.com/th?id=OIP.d6gF4wERyu2CkO_KQBLuAwHaBd&w=350&h=69&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="HDFC Bank" onclick="selectBank('hdfc')">
+                        <img src="data:image/png;base64,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" alt="State Bank of India" onclick="selectBank('sbi')">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.vkFujligiCX9K2g2tG33SQHaBl?w=347&h=75&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="ICICI Bank" onclick="selectBank('icici')">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.sZRJ8mBkwzsrflQHTgoRSAAAAA?w=295&h=90&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Axis Bank" onclick="selectBank('axis')">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.fmyyNPr65ppYt80AcSV46AAAAA?w=306&h=130&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Yes Bank" onclick="selectBank('yes')">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.-ducy53wJ_xAJbqdosmmPwHaE8?w=265&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Kotak Bank" onclick="selectBank('kotak')">
+                    </div>
+                    <div class="other-options">
+                        <label for="other-banks">Other options:</label>
+                        <select id="other-banks">
+                            <option value="" selected>Choose a bank</option>
+                            <option value="hdfc">HDFC Bank</option>
+                            <option value="sbi">State Bank of India</option>
+                            <option value="icici">ICICI Bank</option>
+                            <option value="axis">Axis Bank</option>
+                            <option value="yes">Yes Bank</option>
+                            <option value="kotak">Kotak Bank</option>
+                            <!-- Add more banks as needed -->
+                        </select>
+                    </div>
+                    <button onclick=payNow() class="pay-button">Pay Now</button>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Welcome to Celebration Relations, your one-stop shop for all your gifting needs. We offer a wide range of cakes, flowers, combos, gifts, and more to make every occasion special.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://i.pinimg.com/originals/ea/18/f4/ea18f407cfaed0202d265cf6cf1ac62b.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://clipart.info/images/ccovers/1534043160twitter-logo-png-black.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://i.pinimg.com/736x/02/77/12/027712250a632b2e6f63c5466b792494.jpg" alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/linkedin-512.png" alt="LinkedIn"></a>
+                      </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Celebration Relations. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function showPaymentOption(option) {
+    const options = ['upi', 'card', 'netbanking'];
+    options.forEach(opt => {
+        document.getElementById(opt).style.display = opt === option ? 'block' : 'none';
+    });
+}
+
+function selectBank(bank) {
+            document.getElementById('other-banks').value = bank;
+        }
+
+function payWithQRCode() {
+    alert("Proceeding to pay with QR code");
+}
+function QRCodealert() {
+    alert("Thank You!! Your payment is successful")
+}
+
+function payNow() {
+    alert("Thank You!! Your payment is successful");
+}
+function showQRCode() {
+            var qrCodeContainer = document.getElementById('qr-code-container');
+            if (qrCodeContainer.style.display === 'none') {
+                qrCodeContainer.style.display = 'block';
+            } else {
+                qrCodeContainer.style.display = 'none';
+            }
+        }
+
+    </script>
+</body>
+</html>

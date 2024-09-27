@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling for product display */
+        .product {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product h2 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .product p {
+            margin: 5px 0;
+        }
+        .product .rating {
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-title-container">
+            <div class="logo">
+                <img src="https://i.pinimg.com/originals/02/cf/dd/02cfdd647990ccda91941d30314ac115.gif" width="100" height="100" alt="Logo">
+            </div>
+            <div class="title">
+                <h1>WELCOME</h1>
+            </div>
+        </div>
+        <div class="search-bar">
+            <form id="search-form" action="javascript:void(0);">
+                <input type="text" id="search-input" placeholder="Search for gifts">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+         <div class="location-dropdown">
+            <div class="location-select-container">
+                <img src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-vector-location-icon-png-image_5159127.jpg" alt="Location Icon" width="20" height="20">
+                <select id="location-select">
+                    <option value="Bangalore" selected>Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+                
+            </div>
+        </div>
+        <div class="user-options">
+            <div class="account-dropdown">
+                <button id="account-btn">Account</button>
+                <div class="account-dropdown-content">
+                    <a href="#" id="login-link">Login</a>
+                    <a href="my_orders.html">My Orders</a>
+                    <a href="my_address.html">My Address</a>
+                    <a href="my_wallet.html">My Wallet</a>
+                    <a href="my_reminders.html">My Reminders</a>
+                </div>
+            </div>
+            <div class="wishlist-dropdown">
+                <a href="wishlist.html"><button>Wishlist</button></a>
+                <div class="wishlist-dropdown-content">
+                    <!-- Wishlist options can be added here -->
+                </div>
+            </div>
+            <div class="cart-dropdown">
+                <a href="cart.html"><button>Cart (2)</button></a>
+                <div class="cart-dropdown-content">
+                    <!-- Cart options can be added here -->
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">EXPRESS</a></li>
+            <li><a href="#">CAKES</a></li>
+            <li><a href="#">FLOWERS</a></li>
+            <li><a href="#">PLANTS</a></li>
+            <li><a href="#">GIFTS</a></li>
+            <li><a href="#">PERSONALIZED GIFTS</a></li>
+            <li class="dropdown">
+                <a href="#">COMBOS</a>
+                <div class="dropdown-content">
+                    <div class="column">
+                        <h3>Combos By Type</h3>
+                       <a href="all-combos.html">All Combos</a>
+                        <a href="best-seller.html">Best Seller</a>
+                        <a href="new-arrival.html">New Arrival</a>
+                        <a href="Premium.html">Premium Combos</a>
+                    </div>
+                    <div class="column">
+                        <h3>Exclusive Combos</h3>
+                        <a href="cake-combos.html">All Cake Combos</a>
+                        <a href="flower-combos.html">All Flower Combos</a>
+                
+                        <a href="express-combos.html">Express Combos Delivery</a>
+                        <a href="personalised-combos.html">Personalised Combos Gifts</a>
+                    </div>
+                    <div class="column">
+                        <h3>Featured Combos</h3>
+                        <a href="flower-combos.html">Cakes And Flowers</a>
+                        <a href="flowersandchocolates.html">Flowers And Chocolates</a>
+                        <h3>Occasion Combo</h3>
+                        <a href="anniversary.html">Anniversary Combo</a>
+                        <a href="birthday-combos.html">Birthday Combo</a>
+                    </div>
+                    <div class="column">
+                        <a href="#"><img src="https://assets.winni.in/groot/2023/11/20/combos/best-seller-combos.jpg" alt="Best Seller Combos"></a>
+                        <a href="#"><img src="https://assets.winni.in/groot/2023/11/20/combos/express-combo-delivery.jpg" alt="Express Combo Delivery"></a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">BIRTHDAY</a></li>
+            <li><a href="#">ANNIVERSARY</a></li>
+            <li><a href="#">OCCASIONS</a></li>
+        </ul>
+    </nav>
+    <h1>My Wishlist</h1>
+    <div class="wishlist-grid">
+        <!-- Products will be dynamically inserted here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+
+            const wishlistGrid = document.querySelector('.wishlist-grid');
+
+            function displayWishlist() {
+                wishlistGrid.innerHTML = '';
+                const wishlistProducts = products.filter(product => product.isFavorite);
+                wishlistProducts.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'product';
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <h2>${product.name}</h2>
+                        <p>₹ ${product.price} ${product.originalPrice ? `<span class="original-price">₹ ${product.originalPrice}</span> <span class="discount">${product.discount}% Off</span>` : ''}</p>
+                        <p class="rating">${product.rating} ★ (${product.reviews} Reviews)</p>
+                    `;
+                    wishlistGrid.appendChild(productDiv);
+                });
+            }
+
+            displayWishlist();
+        });
+    </script>
+</body>
+</html>
